@@ -36,4 +36,29 @@ int main(void)
     array.remove(5);
     array.traversing();
     array.remove(6);
+
+    cout<<"==== check the selection sort algorithm"<<endl;
+    array.insert(2);
+    array.insert(1);
+    array.insert(5);
+    array.insert(4);
+    array.insert(3);
+    array.selection_sort();
+    array.traversing();
+
+    array.remove(1);
+    array.remove(2);
+    array.remove(3);
+    array.remove(4);
+    array.remove(5);
+
+    cout<<"==== check the bubble sort algorithm"<<endl;
+    array.insert(2);
+    array.insert(1);
+    array.insert(5);
+    array.insert(4);
+    array.insert(3);
+    array.bubble_sort();
+    array.traversing();
+    cout<<array.binary_search(2) <<endl;
 }

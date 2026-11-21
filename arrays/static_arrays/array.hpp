@@ -12,4 +12,7 @@ public:
     void insert(int number);
     void remove(int number);
     int linear_search(int number);
+    int binary_search(int number);
+    void selection_sort();
+    void bubble_sort();
 };
