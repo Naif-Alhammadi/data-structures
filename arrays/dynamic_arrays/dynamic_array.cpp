@@ -34,18 +34,17 @@ void Array::display()
 // insert inside the array (from the end of the array)
 void Array::insert(int element)
 {
-    // Time: O(1)
-    // Space: O(1)
+    // Time: O(1) -> Amortized
+    // Space: O(1) -> Amortized
 
     while(true)
     {
         // if current size of the array is smaller than the size add it
         if(current + 1 < size)
         {
-            std::cout<<current + 1<<std::endl;
             list[current + 1] = element;
-            std::cout<<list[current + 1]<<" list"<<std::endl;
             current++;
+
             return;
         }
         
@@ -61,11 +60,14 @@ void Array::insert(int element)
 // make the array larger
 void Array::resize()
 {
+    // Time: O(n)
+    // Space: O(n)
+
     // add some extra space to the old array
-    const int NEW_SIZE = 5;
+    int new_size = 2 * size;
 
     // initialize the new array
-    int *temp = new int[size + NEW_SIZE];
+    int *temp = new int[new_size];
 
     // copy the elements from the old array to the new one
     for(int i = 0; i < size; i++)
@@ -74,7 +76,7 @@ void Array::resize()
     }
 
     // add extra size
-    size += NEW_SIZE;
+    size += new_size;
 
     // free the old memory
     delete []list;
